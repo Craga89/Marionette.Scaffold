@@ -1,3 +1,4 @@
+// Base Controller that all others should derive from
 module.exports = Marionette.Controller.extend({
 	constructor: function(options) {
 		if(options == null) { options = {}; }

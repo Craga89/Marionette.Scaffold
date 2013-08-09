@@ -207,5 +207,7 @@ var properties = {
 };
 
 // Define it as a Layout and ItemView type
-Marionette.Layout.Form = Marionette.Layout.extend(properties);
-Marionette.ItemView.Form = Marionette.ItemView.extend(properties);
+module.exports = {
+	View: Marionette.ItemView.extend(properties),
+	Layout: Marionette.Layout.extend(properties)
+};

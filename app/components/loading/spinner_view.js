@@ -1,4 +1,4 @@
-var SpinnerView = Marionette.ItemView.extend({
+module.exports = Marionette.ItemView.extend({
 	_type: 'loading', // For detection in Dialog region
 	
 	template: false,
@@ -38,7 +38,3 @@ var SpinnerView = Marionette.ItemView.extend({
 		};
 	}
 });
-
-module.exports = {
-	Spinner: SpinnerView
-};

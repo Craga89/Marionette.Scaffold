@@ -11,9 +11,7 @@ var ListController = App.Components.Controllers.Base.extend({
 		this.show( view );
 
 		// Handle breadcrumb updates
-		console.log('test');
 		App.commands.setHandler('update:breadcrumbs', function(breadcrumbs) {
-			console.log(arguments);
 			this.breadcrumbs.reset(breadcrumbs);
 		}, this);
 	},

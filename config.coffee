@@ -25,10 +25,8 @@ exports.config =
 			# even if they are not present here.
 			order:
 				before: [
-					'vendor/scripts/json2.js',
-					'vendor/scripts/jquery-1.10.2.min.js',
+					# Shims and 
 					'vendor/scripts/console-helper.js',
-					'vendor/scripts/modernizr.js',
 					'vendor/scripts/underscore-1.4.4.js',
 					'vendor/scripts/backbone-1.0.0.js',
 					'vendor/scripts/backbone.model-binder.js',
@@ -36,21 +34,20 @@ exports.config =
 					'vendor/scripts/backbone.marionette.js',
 					'vendor/scripts/backbone-super.js',
 					
-					# These must come before the rest of the Bootstrap JS because of dependencies
+					# Bootstrap specific
 					'vendor/scripts/bootstrap/bootstrap-tooltip.js',
 					'vendor/scripts/bootstrap/bootstrap-transition.js',
-					
-					# 'vendor/scripts/bootstrap/bootstrap-affix.js',
-					# 'vendor/scripts/bootstrap/bootstrap-alert.js',
+					'vendor/scripts/bootstrap/bootstrap-affix.js',
+					'vendor/scripts/bootstrap/bootstrap-alert.js',
 					'vendor/scripts/bootstrap/bootstrap-button.js',
-					# 'vendor/scripts/bootstrap/bootstrap-carousel.js',
-					# 'vendor/scripts/bootstrap/bootstrap-collapse.js',
+					'vendor/scripts/bootstrap/bootstrap-carousel.js',
+					'vendor/scripts/bootstrap/bootstrap-collapse.js',
 					'vendor/scripts/bootstrap/bootstrap-dropdown.js',
 					'vendor/scripts/bootstrap/bootstrap-modal.js',
-					# 'vendor/scripts/bootstrap/bootstrap-popover.js',
-					# 'vendor/scripts/bootstrap/bootstrap-scrollspy.js',
+					'vendor/scripts/bootstrap/bootstrap-popover.js',
+					'vendor/scripts/bootstrap/bootstrap-scrollspy.js',
 					'vendor/scripts/bootstrap/bootstrap-tab.js',
-					# 'vendor/scripts/bootstrap/bootstrap-typeahed.js',
+					'vendor/scripts/bootstrap/bootstrap-typeahead.js'
 					
 				]
 				after: [ 'test/vendor/scripts/test-helper.js' ]
@@ -64,8 +61,8 @@ exports.config =
 
 			order:
 				before: [
-					'app/styles/prefixer.less',
-					'vendor/styles/bootstrap/bootstrap.less'
+					'vendor/styles/bootstrap/bootstrap.less',
+					'vendor/styles/prefixer.less'
 				]
 				
 		templates:
@@ -83,8 +80,10 @@ exports.config =
 				jQuery: true
 				Backbone: true
 				Marionette: true
-				Grower: true
+				App: true
 
+	# Optimize outputs
+	optimize: false
 
 	# Change this if you're using something other than backbone (e.g. 'ember').
 	# Content of files, generated with `brunch generate` depends on the setting.

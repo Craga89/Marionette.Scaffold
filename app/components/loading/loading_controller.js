@@ -1,5 +1,5 @@
 var BaseController = require('../controllers/base'),
-	LoadingViews = require('./loading_view');
+	SpinnerView = require('./spinner_view');
 
 var LoadingController = BaseController.extend({
 	type: 'Loading',
@@ -76,7 +76,7 @@ var LoadingController = BaseController.extend({
 	},
 
 	getSpinnerView: function(overlay) {
-		return new LoadingViews.Spinner({
+		return new SpinnerView({
 			overlay: overlay
 		});
 	},

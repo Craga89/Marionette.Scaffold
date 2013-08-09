@@ -2,7 +2,7 @@
 // to the regular AppRouter class, but ensures that all URL requests
 // are checked to ensure the user is logged in before being handled.
 // If the user is not logged in, they will be redirected to the login page.
-Marionette.AppRouter.Authenticated = Marionette.AppRouter.extend({
+module.exports = Marionette.AppRouter.extend({
 	before: {
 		'*any': function(fragment, args) {
 			var isLoginPage = /^login/.test(fragment);

@@ -2,7 +2,7 @@ var dialogTemplate = require('templates/dialogs/default');
 
 // http://twitter.github.com/bootstrap/javascript.html#modals
 // http://lostechies.com/derickbailey/2012/04/17/managing-a-modal-dialog-with-backbone-and-marionette/
-var Dialog = Backbone.Marionette.Region.extend({
+module.exports = Backbone.Marionette.Region.extend({
 	_ns: '.modalregion',
 
 	open: function(view) {
@@ -131,5 +131,3 @@ var Dialog = Backbone.Marionette.Region.extend({
 		}
 	}
 });
-
-module.exports = Dialog;

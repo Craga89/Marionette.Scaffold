@@ -20,6 +20,9 @@ App = new Backbone.Marionette.Application({
 	}
 });
 
+// Initialize components 
+App.initializeComponents();
+
 // Setup request handlers
 App.reqres.setHandler('default:region', function() {
 	return App.mainRegion;
@@ -32,22 +35,19 @@ App.commands.setHandler('unregister:instance', App.unregister, App);
 // Setup regions
 App.addRegions({
 	headerRegion: '#header-region',
-	
+
 	breadcrumbRegion: '#breadcrumb-region',
 	
-	mainRegion: require('views/regions/page').extend({
+	mainRegion: App.Components.Regions.Page.extend({
 		el: '#main-region'
 	}),
 	
-	dialogRegion: require('views/regions/dialog').extend({
+	dialogRegion: App.Components.Regions.Dialog.extend({
 		el: '#dialog-region'
 	}),
 
 	footerRegion: '#footer-region'
 });
-
-// Initialize components
-App.initializeComponents();
 
 // Initialize modules
 App.initializeModules();

@@ -1,4 +1,4 @@
-var PageRegion = Backbone.Marionette.Region.extend({
+module.exports = Backbone.Marionette.Region.extend({
 	open: function(view) {
 		if(view.id !== "#login") {
 			// Update page breadcrumbs
@@ -37,5 +37,3 @@ var PageRegion = Backbone.Marionette.Region.extend({
 		App.dialogRegion.close();
 	}
 });
-
-module.exports = PageRegion;

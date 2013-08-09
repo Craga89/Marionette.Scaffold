@@ -1,5 +1,19 @@
-
+// See https://github.com/fantactuka/backbone-route-filter
 (function(Backbone, _) {
+
+    var extend = Backbone.Router.extend;
+
+    Backbone.Router.extend = function() {
+        var child = extend.apply(this, arguments),
+            childProto = child.prototype,
+            parentProto = this.prototype;
+
+        _.each(['before', 'after'], function(filter) {
+            _.defaults(childProto[filter], parentProto[filter]);
+        });
+
+        return child;
+    };
 
     _.extend(Backbone.Router.prototype, {
 
