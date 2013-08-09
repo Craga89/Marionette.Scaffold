@@ -27,11 +27,7 @@ App = new Backbone.Marionette.Application({
 	// Initializes the various 'Apps' of the application, representing
 	// different pages and regions on the page
 	initializeModules: function() {
-		App.modules = {
-			header: require('apps/header/header_app'),
-			welcome: require('apps/welcome/welcome_app'),
-			footer: require('apps/footer/footer_app')
-		};
+		App.modules = require('modules');
 	}
 });
 
