@@ -29,7 +29,7 @@ App = new Backbone.Marionette.Application({
 	initializeModules: function() {
 		App.modules = {
 			header: require('apps/header/header_app'),
-			home: require('apps/home/home_app'),
+			welcome: require('apps/welcome/welcome_app'),
 			footer: require('apps/footer/footer_app')
 		};
 	}
