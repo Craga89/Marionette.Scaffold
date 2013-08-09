@@ -1,3 +1,5 @@
+path = require 'path'
+
 exports.config =
 	
 	# Edit the next line to change default build path.
@@ -15,8 +17,8 @@ exports.config =
 			# * map of ('outputFilePath': /regExp that matches input path/)
 			# * map of ('outputFilePath': function that takes input path)
 			joinTo:
-				'javascripts/app.js': /^app/
-				'javascripts/vendor.js': /^vendor/
+				'javascripts/app.js': /^app[\\/](?!config[\\/]overrides)/
+				'javascripts/vendor.js': /^(vendor|app[\\/]config[\\/]overrides)/
 				'test/javascripts/test.js': /^test[\\/](?!vendor)/
 				'test/javascripts/test-vendor.js': /^test[\\/](?=vendor)/
 			
@@ -25,12 +27,13 @@ exports.config =
 			# even if they are not present here.
 			order:
 				before: [
-					# Shims and 
+					# Shims
 					'vendor/scripts/console-helper.js',
+
+					# Hard dependancies
 					'vendor/scripts/underscore-1.4.4.js',
 					'vendor/scripts/backbone-1.0.0.js',
 					'vendor/scripts/backbone.model-binder.js',
-					'vendor/scripts/backbone-route-filter.js',
 					'vendor/scripts/backbone.marionette.js',
 					'vendor/scripts/backbone-super.js',
 					
@@ -68,6 +71,9 @@ exports.config =
 		templates:
 			defaultExtension: 'jade'
 			joinTo: 'javascripts/app.js'
+
+	conventions:
+		vendor: /(vendor|app[\\/]config[\\/]overrides)[\\/]/
 
 	plugins:
 		jshint:
