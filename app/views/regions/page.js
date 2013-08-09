@@ -12,7 +12,7 @@ var PageRegion = Backbone.Marionette.Region.extend({
 	updateBreadcrumbs: function(view) {
 		var breadcrumbs = [{
 			url: '#' + App.rootRoute,
-			name: 'App List'
+			name: 'Home'
 		}];
 
 		// Add view breadcrumbs if defined

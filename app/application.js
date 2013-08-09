@@ -9,25 +9,14 @@ App = new Backbone.Marionette.Application({
 	// Root page
 	rootRoute: '',
 
-	// Controller objects
-	Controllers: {
-		Base: require('controllers/base')
-	},
-
 	// Grabs and initializes various components
 	initializeComponents: function() {
-		App.api = require('api');
-
-		App.components = {
-			utilities: require('entities/base/utilities'),
-			loading: require('components/loading/loading_controller')
-		};
+		App.Components = require('components');
 	},
 
-	// Initializes the various 'Apps' of the application, representing
-	// different pages and regions on the page
+	// Initializes the various modules of the application
 	initializeModules: function() {
-		App.modules = require('modules');
+		App.Modules = require('modules');
 	}
 });
 
@@ -43,17 +32,18 @@ App.commands.setHandler('unregister:instance', App.unregister, App);
 // Setup regions
 App.addRegions({
 	headerRegion: '#header-region',
-	footerRegion: '#footer-region',
-	mainRegion: require('views/regions/page').extend({ el: '#main-region' }),
-	dialogRegion: require('views/regions/dialog').extend({ el: '#dialog-region' })
-});
+	
+	breadcrumbRegion: '#breadcrumb-region',
+	
+	mainRegion: require('views/regions/page').extend({
+		el: '#main-region'
+	}),
+	
+	dialogRegion: require('views/regions/dialog').extend({
+		el: '#dialog-region'
+	}),
 
-// Setup dummy user
-App.user = new (require('entities/users').Model)({
-	username: 'Craig',
-	firstName: 'Craig',
-	lastName: 'Thompson',
-	email: 'craig@craigsworks.com'
+	footerRegion: '#footer-region'
 });
 
 // Initialize components
@@ -68,8 +58,10 @@ App.on('initialize:after', function() {
 });
 
 // Debug all inter-signal calls via the Application.vent interface
-App.vent.on('all', function(evt, model) {
-	console.log('DEBUG: Event Caught: ' + evt + ' with model ', model);
-});
+if(App.DEBUG) {
+	App.vent.on('all', function(evt, model) {
+		console.log('DEBUG: Event Caught: ' + evt + ' with model ', model);
+	});
+}
 
 module.exports = App;

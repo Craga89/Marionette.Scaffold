@@ -1,5 +1,4 @@
-var api = require('api'),
-	IndexController = require('./index/index_controller');
+var IndexController = require('./index/index_controller');
 
 var WelcomeRouter = Marionette.AppRouter.extend({
 	appRoutes: {

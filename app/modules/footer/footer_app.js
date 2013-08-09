@@ -1,32 +1,14 @@
-var ListController = require('./list/list_controller'),
-	TermsController = require('./terms/terms_controller');
-
-var FooterRouter = Marionette.AppRouter.Authenticated.extend({
-	appRoutes: {
-		'terms': 'terms'
-	}
-});
+var PanelController = require('./panel/panel_controller');
 
 var API = {
-	list: function() {
-		return new ListController({
+	panel: function() {
+		return new PanelController({
 			region: App.footerRegion
 		});
-	},
-
-	terms: function() {
-		return new TermsController();
 	}
 };
 
 // Show footer immediately
-API.list();
-
-// Initialize router on app start
-App.addInitializer(function() {
-	new FooterRouter({
-		controller: API
-	});
-});
+API.panel();
 
 module.exports = API;

@@ -1,6 +1,6 @@
 var ListLayout = require('./list_view');
 
-var ListController = App.Controllers.Base.extend({
+var ListController = App.Components.Controllers.Base.extend({
 	type: 'Header',
 
 	initialize: function() {

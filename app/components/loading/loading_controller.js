@@ -1,6 +1,7 @@
-var LoadingViews = require('./loading_view');
+var BaseController = require('../controllers/base'),
+	LoadingViews = require('./loading_view');
 
-var LoadingController = App.Controllers.Base.extend({
+var LoadingController = BaseController.extend({
 	type: 'Loading',
 
 	initialize: function(options) {

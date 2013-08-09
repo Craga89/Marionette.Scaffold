@@ -1,6 +1,6 @@
 var ScaffoldView = require('./scaffold_view');
 
-var ScaffoldController = App.Controllers.Base.extend({
+var ScaffoldController = App.Components.Controllers.Base.extend({
 
 	initialize: function() {
 		var view = this.getScaffoldView();

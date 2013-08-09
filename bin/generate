@@ -7,7 +7,7 @@ var path = require('path'),
 	Q = require('q'),
 	baseDir = path.join(__dirname, '../'),
 	scaffolds = path.join(baseDir, 'scaffolds'),
-	apps = path.join(baseDir, 'app', 'apps');
+	modules = path.join(baseDir, 'app', 'modules');
 
 function camel(s) {
 	return s.charAt(0).toUpperCase() + s.substr(1);
@@ -26,15 +26,16 @@ function findReplace(file, replacements) {
 	}, console.error);
 }
 
-function createApp(name) {
-	var dest = path.join(apps, name),
+function createModule(name, page) {
+	var dest = path.join(modules, name),
 		appFile = path.join(dest, name+'_app.js'),
 		replacements = {};
 
 	// Setup replacements
 	replacements[ camel(name) ] = new RegExp('Scaffold', 'gm');
+	page && (replacements.index = page);
 
-	// Copy to apps/app/<name>
+	// Copy to app/modules/<name>
 	Q.nfcall(ncp, path.join(scaffolds, 'app'), dest)
 
 	// Rename app.js to <name>_app.js
@@ -47,12 +48,17 @@ function createApp(name) {
 		return findReplace(appFile, replacements);
 	})
 
+	// Create index page
+	.then(function() {	
+		createPage(name, page || 'index');
+	})
+
 	// Error out on fail
 	.fail(console.error);
 }
 
 function createPage(app, name) {
-	var appDest = path.join(apps, app),
+	var appDest = path.join(modules, app),
 		dest = path.join(appDest, name),
 		replacements = {};
 
@@ -60,7 +66,7 @@ function createPage(app, name) {
 	replacements[ camel(name) ] = new RegExp('Scaffold', 'gm');
 	replacements[ name ] = new RegExp('scaffold', 'gm');
 
-	// Copy to apps/app/<name>
+	// Copy to modules/app/<name>
 	Q.nfcall(ncp, path.join(scaffolds, 'page'), dest)
 
 	// Find and replace in the files
@@ -86,16 +92,16 @@ function createPage(app, name) {
 
 function help() {
 	console.info(
-		"Generate a new sub application:\n\t" + 
-			"generate app <name>\n\n" + 
+		"Generate a new module:\n\t" + 
+			"generate module <name>\n\n" + 
 
-		"Generate a new page for a sub application:\n\t" + 
-			"generate page <app> <name>"
+		"Generate a new page for a module:\n\t" + 
+			"generate page <module> <name>"
 	);
 }
 
 switch(process.argv[2]) {
-	case 'app': createApp(process.argv[3]); break;
+	case 'module': createModule(process.argv[3], process.argv[4]); break;
 	case 'page': createPage(process.argv[3], process.argv[4]); break;
 	case 'help': help(); break;
 	default: console.error('Invalid command'); break;

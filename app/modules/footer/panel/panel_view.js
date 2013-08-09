@@ -1,5 +1,5 @@
 var Footer = Backbone.Marionette.Layout.extend({
-	template: require('./templates/footer'),
+	template: require('./templates/panel'),
 
 	id: 'footer',
 	tagName: 'footer',

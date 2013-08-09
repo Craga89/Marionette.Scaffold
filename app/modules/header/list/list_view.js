@@ -1,9 +1,7 @@
-var NavigationView = require('./navigation_view'),
-	UserNavigationView = require('./user_navigation_view'),
-	BreadcrumbsView = require('./breadcrumbs_view');
+var NavigationView = require('./navigation_view');
 
 var ListLayout = Backbone.Marionette.Layout.extend({
-	template: require('./templates/header'),
+	template: require('./templates/layout'),
 	id: 'header',
 	tagName: 'header',
 	className: 'navbar navbar-fixed-top',
