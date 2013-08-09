@@ -1,12 +1,6 @@
 // Settings that decide various options throughout the Application
 module.exports = {
-	DEBUG: false,
-
-	api: {
-		proxy: false, // Use reverse express proxy (Fixes IE CORS issue)
-		simulate: false, // Uses simulated API environment (for testing)
-		store: true // Stores proxied response to the api/json directory (proxy must be true)
-	}
+	DEBUG: false
 };
 
 // Import local settings file of possible - soft dependancy - overrides above

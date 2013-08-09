@@ -3,14 +3,14 @@ var api = require('api'),
 
 var WelcomeRouter = Marionette.AppRouter.extend({
 	appRoutes: {
-		// App-specific routes for this sub-app 
+		'': 'index'
 	}
 });
 
 var API = {
 	// Generic application
 	index: function() {
-		
+		return new IndexController();
 	}
 };
 

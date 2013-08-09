@@ -1,4 +1,4 @@
-var ScaffoldView = require('./dashboard_view');
+var ScaffoldView = require('./scaffold_view');
 
 var ScaffoldController = App.Controllers.Base.extend({
 

@@ -1,4 +1,4 @@
-var IndexView = require('./dashboard_view');
+var IndexView = require('./index_view');
 
 var IndexController = App.Controllers.Base.extend({
 
