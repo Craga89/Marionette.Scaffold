@@ -88,8 +88,19 @@ exports.config =
 				Marionette: true
 				App: true
 
+		uglify:
+			mangle: true
+			compress:
+				global_defs:
+					$: false
+					jQuery: false
+					Backbone: false
+					Marionette: false
+					App: false
+
 	# Optimize outputs
 	optimize: false
+	minify: true
 
 	# Change this if you're using something other than backbone (e.g. 'ember').
 	# Content of files, generated with `brunch generate` depends on the setting.

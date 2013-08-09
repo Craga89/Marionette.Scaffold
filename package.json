@@ -22,7 +22,7 @@
     "css-brunch": ">= 1.5.1",
     "javascript-brunch": ">= 1.5.1",
     "less-brunch": ">= 1.5.1",
-    "uglify-js-brunch": ">= 1.5.1",
+    "uglify-js-brunch": "~1.7.2",
     "jade-brunch": "~1.6.0",
     "jshint-brunch": "~1.6.0",
     "express": "~3.3.4"
