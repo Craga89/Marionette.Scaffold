@@ -1,0 +1,304 @@
+@scale: 1.5;
+
+@headerHeight: 100px;
+
+@borderColor: #DDD;
+
+@headerColor: #5BC0DE;
+
+
+@a4-width: 21cm * @scale;
+@a4-height: 29.7cm * @scale;
+@a4-padding: 1cm * @scale 1cm * @scale 0.3cm * @scale;
+@a4-margin-val: 1cm * @scale;
+@a4-margin: @a4-margin-val auto;
+
+canvas{
+	border: 1px solid red;
+}
+
+.a4	{
+	position: relative;
+	width: @a4-width;
+	height: @a4-height;
+	padding: @a4-padding;
+	margin: @a4-margin;
+	overflow: hidden;
+
+	border: 1px @borderColor solid;
+	border-radius: 5px;
+	background: white;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.a4.landscape{
+	width: @a4-height;
+	height: @a4-width;
+}
+
+.invoice{
+	&, *{
+		font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Droid Sans', sans-serif;
+	}
+
+	h1,h2,h3,h4,h5{
+		color: @headerColor;
+	}
+
+	sup{ font-size: 0.3em; }
+
+	section{
+		margin: 0 0 50px;
+	}
+	
+	.currency{
+		padding-right: 8px;
+	}
+
+	.currency.value{
+		display: inline-block;
+		min-width: 50%;
+	}
+
+	.editable{
+		text-shadow: 0 0 10px fade(@headerColor, 40%);
+		cursor: pointer;
+	}
+
+	.top{
+		margin: 0 0 30px;
+
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		letter-spacing: .3em;
+		font-size: 1.5em;
+
+		background-color: @headerColor;
+		border-color: @headerColor;
+		color: white;
+	}
+
+
+	.header{
+		height: @headerHeight;
+		margin: 0 0 75px;
+
+		line-height: @headerHeight;
+
+		h2, .logo, address{
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.logo{
+			display: inline-block;
+			position: relative;
+		}
+
+		address{
+			max-width: 60%;
+			margin: 30px 10px 0 0;
+			font-size: 0.9em;
+			color: #999;
+			text-align: right;
+
+			p{
+				white-space: pre;
+				word-break: break-word;
+			}
+
+			textarea{
+				width: 600px;
+			}
+		}
+	}
+
+	.customer{
+		min-height: 150px;
+
+		border-top: 1px solid @borderColor;
+
+		address{
+			padding: 14px 0 0;
+			white-space: pre;
+			max-width: 50%;
+
+			textarea{ min-height: 120px; }
+		}
+
+		.details{
+			position: relative;
+			z-index: 2;
+
+			margin-top: -1px;
+
+			font-size: 1.5em;
+		
+			td{
+				padding: 10px 20px;
+			}
+
+			h5{
+				margin: 5px 0;
+			}
+		}
+
+		.invoice-no{
+			position: relative;
+			z-index: 1;
+			margin: 10px 35px 0 0;
+			clear: right;
+
+			color: #BBB;
+
+			p{
+				position: relative;
+				z-index: 2;
+			}
+
+			&:after{
+				content: url(https://chart.googleapis.com/chart?cht=qr&chs=50x50&chl=http://craigswork.com&choe=UTF-8);
+				position: absolute;
+				right: -48px;
+				top: -14px;
+				z-index: 1;
+
+				opacity: 0.4;
+			}
+		}
+	}
+
+	.items{
+		.name, .description{ text-align: left; }
+		.name{ width: 15%; }
+		.description{ width: 30%; }
+		.hours{ width: 4%; }
+		.rate{ width: 8%; }
+		.price, .total{ width: 8%; text-align: right; }
+
+		td, th{
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		tfoot{
+			th{ text-align: right; }
+			sup{ margin-left: 2px; }
+		}
+	}
+
+	.info{
+		font-size: 90%;
+
+		h5{ margin: 0 0 5px; }
+	}
+
+	.about{
+		position: absolute;
+		bottom: 0; left: 0;
+		width: @a4-width - 2 * @a4-margin-val;
+		margin: 0 0 0 1cm * @scale;
+		padding: 30px 0;
+
+		border-top: 1px solid @borderColor;
+
+		address, p{
+			white-space: pre;
+			line-height: 1.75;
+		}
+
+		strong{ padding-right: 7px; }
+
+		h4{ margin: 0 0 5px; }
+	}
+
+	.thanks{
+		text-align: center;
+	}
+}
+
+@media print {
+	* {
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+
+		// Remove filter effects
+		box-shadow: none !important;
+		text-shadow: none !important;
+		filter: none !important;
+		-ms-filter: none !important;
+
+		// Set standard font
+		font-family: sans-serif !important;
+	}
+
+	@page {
+		size: A4 portrait;
+		margin: 0;
+	}
+
+	.a4, html, body{
+		margin: 0 !important;
+		padding: 0 !important;
+		border: 0 !important;
+
+		page-break-inside: avoid;
+		page-break-after: avoid;
+	}
+
+	.a4{
+		padding: 1.5cm !important;
+	}
+
+	a, a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	h1, h2, h3, h4, h5{
+		page-break-after: avoid;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	#header-region,
+	#footer-region{
+		display: none;
+	}
+
+	section, ul, img{
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	article {
+		page-break-before: always;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	.page-break	{
+		display: block;
+		page-break-before: always;
+	}
+}

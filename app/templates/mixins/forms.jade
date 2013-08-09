@@ -1,0 +1,25 @@
+mixin formMessage
+	.form-message.alert.fade.in(style="display:none")
+		span
+
+mixin required
+	small.text-error(attributes) 
+		|  *  
+		block
+
+mixin inlinehelp
+	small.help-inline.pull-right
+
+mixin commonInput()
+	- attributes["readonly"] = editable === false
+
+	if /checkbox|radio/.test(attributes['type'])
+		input(attributes)
+	else
+		input(attributes).input-block-level
+
+mixin commonButton(button)
+	- attributes["disabled"] = enabled === false ? 'disabled' : null
+
+	button.btn(attributes) 
+		block

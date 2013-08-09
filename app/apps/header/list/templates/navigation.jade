@@ -1,0 +1,19 @@
+mixin link(name, text, url)
+	- classes = _page === name ? 'active' : ''
+	li(class=classes)
+		a(href=url) #{text}
+		block
+
+mixin submenu(name, text)
+	li.dropdown
+		a.dropdown-toggle(data-toggle="dropdown", href="") #{text} 
+			b.caret
+
+		ul.dropdown-menu
+			block
+
++link('home', 'Home', '#')
+
++submenu('manage', 'Manage')
+	+link('employers', 'Employers', '#employers')
+	+link('organizations', 'Organizations', '#organizations')

@@ -1,0 +1,103 @@
+#!/usr/bin/node
+
+var path = require('path'),
+	ncp = require('ncp'),
+	fs = require('fs'),
+	mv = require('mv'),
+	Q = require('q'),
+	baseDir = path.join(__dirname, '../'),
+	scaffolds = path.join(baseDir, 'scaffolds'),
+	apps = path.join(baseDir, 'app', 'apps');
+
+function camel(s) {
+	return s.charAt(0).toUpperCase() + s.substr(1);
+}
+
+function findReplace(file, replacements) {
+	// Replace Scaffold with app name
+	return Q.nfcall(fs.readFile, file, 'utf8').then(function(data) {
+		// MAke all replacements
+		for(i in replacements) {
+			console.log(replacements[i], i);
+			data = data.replace(replacements[i], i);
+		}
+
+		// Write the result file
+		return Q.nfcall(fs.writeFile, file, data, 'utf8');
+	}, console.error);
+}
+
+function createApp(name) {
+	var dest = path.join(apps, name),
+		appFile = path.join(dest, name+'_app.js'),
+		replacements = {};
+
+	// Setup replacements
+	replacements[ camel(name) ] = new RegExp('Scaffold', 'gm');
+
+	// Copy to apps/app/<name>
+	Q.nfcall(ncp, path.join(scaffolds, 'app'), dest)
+
+	// Rename app.js to <name>_app.js
+	.then(function() {
+		return Q.nfcall(mv, path.join(dest, 'app.js'), appFile);
+	}, function() { console.log('tes') })
+
+	// Find and replace in the file
+	.then(function() {
+		return findReplace(appFile, replacements);
+	})
+
+	// Error out on fail
+	.fail(console.error);
+}
+
+function createPage(app, name) {
+	var appDest = path.join(apps, app),
+		dest = path.join(appDest, name),
+		replacements = {};
+
+	// Setup replacements
+	replacements[ camel(name) ] = new RegExp('Scaffold', 'gm');
+	replacements[ name ] = new RegExp('scaffold', 'gm');
+
+	// Copy to apps/app/<name>
+	Q.nfcall(ncp, path.join(scaffolds, 'page'), dest)
+
+	// Find and replace in the files
+	.then(function() {
+		return Q.all(['controller.js', 'view.js'].map(function(file) {
+			return findReplace( path.join(dest, file), replacements );
+		}));
+	})
+
+	// Rename controller/view.js 
+	.then(function() {
+		return Q.all(['controller.js', 'view.js'].map(function(file) {
+			return Q.nfcall(mv, path.join(dest, file), path.join(dest, name+'_'+file));
+		}));
+	})
+	.then(function() {
+		return Q.nfcall(mv, path.join(dest, 'templates', 'page.jade'), path.join(dest, 'templates', name+'.jade'));
+	})
+
+	// Error out on fail
+	.fail(console.error);
+}
+
+function help() {
+	console.info(
+		"Generate a new sub application:\n\t" + 
+			"generate app <name>\n\n" + 
+
+		"Generate a new page for a sub application:\n\t" + 
+			"generate page <app> <name>"
+	);
+}
+
+switch(process.argv[2]) {
+	case 'app': createApp(process.argv[3]); break;
+	case 'page': createPage(process.argv[3], process.argv[4]); break;
+	case 'help': help(); break;
+	default: console.error('Invalid command'); break;
+}

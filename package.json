@@ -1,0 +1,38 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.coffee",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server"
+  },
+  "dependencies": {
+    "brunch": ">= 1.6.7",
+    "clean-css-brunch": ">= 1.5.1",
+    "css-brunch": ">= 1.5.1",
+    "javascript-brunch": ">= 1.5.1",
+    "less-brunch": ">= 1.5.1",
+    "uglify-js-brunch": ">= 1.5.1",
+    "jade-brunch": "~1.6.0",
+    "jshint-brunch": "~1.6.0",
+    "express": "~3.3.4"
+  },
+  "devDependencies": {
+    "ncp": "~0.4.2",
+    "mv": "0.0.5",
+    "q": "~0.9.6"
+  },
+  "optionalDependencies": {
+    "paige": "~0.1.7"
+  }
+}

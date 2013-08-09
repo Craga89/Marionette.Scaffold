@@ -1,0 +1,99 @@
+@import "prefixer.less";
+
+@width: 102px;
+@circleSize: 20px;
+@circleSpacing: 10px;
+
+@colorStart: #BBA990;
+@colorEnd: #5B5143;
+
+.overlayBackground () {
+	background: transparent url(../images/black-overlay.png) repeat 0 0;
+	background: rgba(0,0,0,0.4);
+}
+
+.overlayBackgroundWhite () {
+	background: transparent url(../images/white-overlay.png) repeat 0 0;
+	background: rgba(255,255,255,0.4);
+}
+
+.loading-container{
+	height: 60px;
+}
+
+.loading-container.overlay{
+	.overlayBackgroundWhite();
+}
+
+.loading-container.overlay,
+#spinner{
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1030;
+
+	cursor: progress;
+}
+
+#spinner{
+	position: fixed;
+	.overlayBackground();
+}
+
+#spinner .spinner{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: ((@circleSize + @circleSpacing) * 3 + @circleSpacing);
+	height: @circleSize;
+	padding: @circleSpacing / 2 0;
+	margin-left: -(@width / 2);
+
+	background-color: @colorStart;
+	border-radius: @circleSize;
+
+	.box-shadow(0px 0px 10px rgba(0,0,0,0.3));
+}
+
+#spinner .spinner div{
+	background-color: @colorStart;
+	float: left;
+	height: @circleSize;
+	margin-left: @circleSpacing;
+	width: @circleSize;
+
+	.animation-name(spinner);
+	.animation-duration(1s);
+	.animation-iteration-count(infinite);
+	.animation-direction(linear);
+	.border-radius(@circleSize);
+}
+
+#spinner_1{
+	.animation-delay(0.18s);
+}
+
+#spinner_2{
+	.animation-delay(0.42000000000000004s);
+}
+
+#spinner_3{
+	.animation-delay(0.5399999999999999s);
+}
+
+@-moz-keyframes spinner{
+	50%{ background-color: @colorEnd }
+}
+@-ms-keyframes spinner{
+	50%{ background-color: @colorEnd }
+}
+@-webkit-keyframes spinner{
+	50%{ background-color: @colorEnd }
+}
+@-o-keyframes spinner{
+	50%{ background-color: @colorEnd }
+}
+@keyframes spinner{
+	50%{ background-color: @colorEnd}
+}

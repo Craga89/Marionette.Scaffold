@@ -1,0 +1,478 @@
+[
+	{
+		"name": "Avon",
+		"country": "England"
+	},
+	{
+		"name": "Bedfordshire",
+		"country": "England"
+	},
+	{
+		"name": "Berkshire",
+		"country": "England"
+	},
+	{
+		"name": "City of Bristol",
+		"country": "England"
+	},
+	{
+		"name": "Buckinghamshire",
+		"country": "England"
+	},
+	{
+		"name": "Cambridgeshire",
+		"country": "England"
+	},
+	{
+		"name": "Cambridgeshire and Isle of Ely",
+		"country": "England"
+	},
+	{
+		"name": "Cheshire",
+		"country": "England"
+	},
+	{
+		"name": "Cleveland",
+		"country": "England"
+	},
+	{
+		"name": "Cornwall",
+		"country": "England"
+	},
+	{
+		"name": "Cumberland",
+		"country": "England"
+	},
+	{
+		"name": "Cumbria",
+		"country": "England"
+	},
+	{
+		"name": "Derbyshire",
+		"country": "England"
+	},
+	{
+		"name": "Devon",
+		"country": "England"
+	},
+	{
+		"name": "Dorset",
+		"country": "England"
+	},
+	{
+		"name": "Durham",
+		"country": "England"
+	},
+	{
+		"name": "East Suffolk",
+		"country": "England"
+	},
+	{
+		"name": "East Sussex",
+		"country": "England"
+	},
+	{
+		"name": "Essex",
+		"country": "England"
+	},
+	{
+		"name": "Gloucestershire",
+		"country": "England"
+	},
+	{
+		"name": "Greater London",
+		"country": "England"
+	},
+	{
+		"name": "Greater Manchester",
+		"country": "England"
+	},
+	{
+		"name": "Hampshire (County of Southampton)",
+		"country": "England"
+	},
+	{
+		"name": "Hereford and Worcester",
+		"country": "England"
+	},
+	{
+		"name": "Herefordshire",
+		"country": "England"
+	},
+	{
+		"name": "Hertfordshire",
+		"country": "England"
+	},
+	{
+		"name": "Humberside",
+		"country": "England"
+	},
+	{
+		"name": "Huntingdon and Peterborough",
+		"country": "England"
+	},
+	{
+		"name": "Huntingdonshire",
+		"country": "England"
+	},
+	{
+		"name": "Isle of Ely",
+		"country": "England"
+	},
+	{
+		"name": "Isle of Wight",
+		"country": "England"
+	},
+	{
+		"name": "Kent",
+		"country": "England"
+	},
+	{
+		"name": "Lancashire",
+		"country": "England"
+	},
+	{
+		"name": "Leicestershire",
+		"country": "England"
+	},
+	{
+		"name": "Lincolnshire",
+		"country": "England"
+	},
+	{
+		"name": "Lincolnshire, Parts of Holland",
+		"country": "England"
+	},
+	{
+		"name": "Lincolnshire, Parts of Kesteven",
+		"country": "England"
+	},
+	{
+		"name": "Lincolnshire, Parts of Lindsey",
+		"country": "England"
+	},
+	{
+		"name": "London",
+		"country": "England"
+	},
+	{
+		"name": "City of London",
+		"country": "England"
+	},
+	{
+		"name": "Merseyside",
+		"country": "England"
+	},
+	{
+		"name": "Middlesex",
+		"country": "England"
+	},
+	{
+		"name": "Norfolk",
+		"country": "England"
+	},
+	{
+		"name": "Northamptonshire",
+		"country": "England"
+	},
+	{
+		"name": "Northumberland",
+		"country": "England"
+	},
+	{
+		"name": "North Humberside",
+		"country": "England"
+	},
+	{
+		"name": "North Yorkshire",
+		"country": "England"
+	},
+	{
+		"name": "Nottinghamshire",
+		"country": "England"
+	},
+	{
+		"name": "Oxfordshire",
+		"country": "England"
+	},
+	{
+		"name": "Soke of Peterborough",
+		"country": "England"
+	},
+	{
+		"name": "Rutland",
+		"country": "England"
+	},
+	{
+		"name": "Shropshire (Salop)",
+		"country": "England"
+	},
+	{
+		"name": "Somerset",
+		"country": "England"
+	},
+	{
+		"name": "South Humberside",
+		"country": "England"
+	},
+	{
+		"name": "South Yorkshire",
+		"country": "England"
+	},
+	{
+		"name": "Staffordshire",
+		"country": "England"
+	},
+	{
+		"name": "Suffolk",
+		"country": "England"
+	},
+	{
+		"name": "Surrey",
+		"country": "England"
+	},
+	{
+		"name": "Sussex",
+		"country": "England"
+	},
+	{
+		"name": "Tyne and Wear",
+		"country": "England"
+	},
+	{
+		"name": "Warwickshire",
+		"country": "England"
+	},
+	{
+		"name": "West Midlands",
+		"country": "England"
+	},
+	{
+		"name": "Westmorland",
+		"country": "England"
+	},
+	{
+		"name": "West Suffolk",
+		"country": "England"
+	},
+	{
+		"name": "West Sussex",
+		"country": "England"
+	},
+	{
+		"name": "West Yorkshire",
+		"country": "England"
+	},
+	{
+		"name": "Wiltshire",
+		"country": "England"
+	},
+	{
+		"name": "Worcestershire",
+		"country": "England"
+	},
+	{
+		"name": "Yorkshire",
+		"country": "England"
+	},
+	{
+		"name": "Yorkshire, East Riding",
+		"country": "England"
+	},
+	{
+		"name": "Yorkshire, North Riding",
+		"country": "England"
+	},
+	{
+		"name": "Yorkshire, West Riding",
+		"country": "England"
+	},
+	{
+		"name": "City of Aberdeen",
+		"country": "Scotland"
+	},
+	{
+		"name": "Aberdeenshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Angus (Forfarshire)",
+		"country": "Scotland"
+	},
+	{
+		"name": "Argyll",
+		"country": "Scotland"
+	},
+	{
+		"name": "Ayrshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Banffshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Berwickshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Bute",
+		"country": "Scotland"
+	},
+	{
+		"name": "Caithness",
+		"country": "Scotland"
+	},
+	{
+		"name": "Clackmannanshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Cromartyshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Dumfriesshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Dunbartonshire (Dumbarton)",
+		"country": "Scotland"
+	},
+	{
+		"name": "City of Dundee",
+		"country": "Scotland"
+	},
+	{
+		"name": "East Lothian (Haddingtonshire)",
+		"country": "Scotland"
+	},
+	{
+		"name": "City of Edinburgh",
+		"country": "Scotland"
+	},
+	{
+		"name": "Fife",
+		"country": "Scotland"
+	},
+	{
+		"name": "City of Glasgow",
+		"country": "Scotland"
+	},
+	{
+		"name": "Inverness-shire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Kincardineshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Kinross-shire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Kirkcudbrightshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Lanarkshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Midlothian (County of Edinburgh)",
+		"country": "Scotland"
+	},
+	{
+		"name": "Moray (Elginshire)",
+		"country": "Scotland"
+	},
+	{
+		"name": "Nairnshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Orkney",
+		"country": "Scotland"
+	},
+	{
+		"name": "Peeblesshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Perthshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Renfrewshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Ross and Cromarty",
+		"country": "Scotland"
+	},
+	{
+		"name": "Ross-shire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Roxburghshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Selkirkshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Shetland (Zetland)",
+		"country": "Scotland"
+	},
+	{
+		"name": "Stirlingshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Sutherland",
+		"country": "Scotland"
+	},
+	{
+		"name": "West Lothian (Linlithgowshire)",
+		"country": "Scotland"
+	},
+	{
+		"name": "Wigtownshire",
+		"country": "Scotland"
+	},
+	{
+		"name": "Antrim",
+		"country": "Northern Island"
+	},
+	{
+		"name": "Armagh",
+		"country": "Northern Island"
+	},
+	{
+		"name": "City of Belfast",
+		"country": "Northern Island"
+	},
+	{
+		"name": "Down",
+		"country": "Northern Island"
+	},
+	{
+		"name": "Fermanagh",
+		"country": "Northern Island"
+	},
+	{
+		"name": "Londonderry",
+		"country": "Northern Island"
+	},
+	{
+		"name": "City of Londonderry",
+		"country": "Northern Island"
+	},
+	{
+		"name": "Tyrone",
+		"country": "Northern Island"
+	}
+]

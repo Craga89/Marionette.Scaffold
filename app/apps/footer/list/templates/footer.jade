@@ -1,0 +1,11 @@
+mixin link(name, text, url)
+	- classes = _page === name ? 'active' : ''
+	li(class=classes)
+		a(href=url) #{text}
+		block
+
+ul.nav.navbar-nav
+	a.navbar-brand(href="http://craigsworks.com") &copy; 2013 craigsworks
+
+	+link('privacy', 'Privacy &amp; Terms', '#')
+	+link('contact', 'Contact', 'http://github.com/craga89/invoicejs')

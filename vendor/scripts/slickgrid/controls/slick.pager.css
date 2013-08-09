@@ -1,0 +1,22 @@
+.slick-pager {
+  text-align: center;
+}
+
+.slick-pager .slick-pager-status {
+  display: inline-block;
+  padding: 6px;
+
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.slick-pager .slick-pager-nav {
+  float: left;
+  padding: 2px;
+}
+
+.slick-pager .slick-pager-settings {
+  display: block;
+  float: right;
+  padding: 2px;
+}

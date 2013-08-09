@@ -1,0 +1,15 @@
+.slick-columnpicker{
+  position: absolute;
+  display: none;
+  z-index: 20;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  min-width: 150px;
+}
+
+.slick-columnpicker input {
+  margin: 0 10px 0 0;
+  vertical-align: text-bottom;
+}

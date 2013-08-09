@@ -1,0 +1,11 @@
+.modal.fade.in(id=id, role='dialog', tabindex=-1, aria-hidden=false, aria-labelledby=id+'-header', aria-describedby=id+'-body')
+
+	.modal-header
+		button.close(data-dismiss="modal", aria-hidden="true") x
+		h3(id=id+'-header') #{title}
+
+	.modal-body(id=id+'-body')
+
+	.modal-footer(id=id+'footer')
+		for button, i in buttons
+			button.btn(class=button.classes + (i === 0 ? ' btn-primary' : ''), data-dismiss=button.dismiss ? 'modal' : '', data-loading-text=button.loading) #{button.text}
