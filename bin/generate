@@ -36,12 +36,12 @@ function createModule(name, page) {
 	page && (replacements.index = page);
 
 	// Copy to app/modules/<name>
-	Q.nfcall(ncp, path.join(scaffolds, 'app'), dest)
+	Q.nfcall(ncp, path.join(scaffolds, 'module'), dest)
 
 	// Rename app.js to <name>_app.js
 	.then(function() {
 		return Q.nfcall(mv, path.join(dest, 'app.js'), appFile);
-	}, function() { console.log('tes') })
+	})
 
 	// Find and replace in the file
 	.then(function() {
@@ -92,11 +92,11 @@ function createPage(app, name) {
 
 function help() {
 	console.info(
-		"Generate a new module:\n\t" + 
-			"generate module <name>\n\n" + 
+		"\nGenerate a new module:\n\t" + 
+			"generate module <name> <page (index)>\n\n" + 
 
 		"Generate a new page for a module:\n\t" + 
-			"generate page <module> <name>"
+			"generate page <module> <name>\n"
 	);
 }
 
