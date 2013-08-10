@@ -1,0 +1,44 @@
+mixin dialog(name, title, options)
+	- options = options || {}
+	- id = 'modal-'+name
+
+	.modal.fade.hide-invisible.span4(id=id, tabindex=-1, aria-labelledby=id+'-label', aria-describedby=id+'-content', aria-hidden="true", attributes)
+		.modal-dialog
+			.modal-content
+				.modal-header
+					//- Add close button if not explicitly disabled
+					if options.closeButton !== false
+						a.close(data-dismiss='modal', aria-hidden="true") &times;
+
+					h3.modal-title(id=id+'-label') !{title}
+
+				.modal-body(id=id+'-content')
+					//- Use provided block content for dialog content
+					block
+
+				.modal-footer
+					//- Use singular close button if not defined
+					if !options.buttons
+						- options.buttons = { 'Close': { 'data-dismiss': 'modal' } }
+
+					//- Loop over and print each button
+					- i = 0
+					for attributes, text in options.buttons
+						//- Add proper button classes (and increment count)
+						- attributes['class'] = [ attributes['class'] || '', 'btn-' + (!i++ ? 'primary' : 'default')].join(' ')
+
+						//- Remove custom 'click' event attribute (see dialog.js)
+						- delete attributes.click 
+
+						a.btn(attributes) !{text}
+
+
+mixin confirm(name, title, options)
+	- options = options || {}
+	- options.buttons = {
+	- 	'Confirm': { 'data-dismiss': 'modal' },
+	-	'Cancel': { 'data-dismiss': 'modal' }
+	- }
+
+	+dialog(name, title, options)
+		block
