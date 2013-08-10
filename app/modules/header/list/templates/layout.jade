@@ -1,14 +1,26 @@
+
+button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target=".navbar-responsive-collapse")
+	.icon-bar
+	.icon-bar
+	.icon-bar
+
 a.navbar-brand(href="/") MyApp
 
-nav#nav.navbar-nav
+.nav-collapse.collapse.navbar-responsive-collapse
 
-form.navbar-form.pull-left(action="#", method="get")
-	.input-group(style="width: 300px;")
-		input.form-control(type="search", name="q")
-		span.input-group-btn 
-			button.btn.btn-default(type="button") Search
+	nav#nav.navbar-nav
 
-button.btn.btn-default.navbar-btn.pull-right(type="button")
-	| Hello 
-	strong User
-	| !
+	form.navbar-form.pull-left(action="#", method="get")
+		input.form-control.col-lg-8(type="search", name="q", placeholder="Search")
+
+	ul.nav.navbar-nav.pull-right
+		li.dropdown
+			a.dropdown-toggle(href="#", data-toggle="dropdown")
+				| Hello 
+				strong User
+				| ! 
+				b.caret
+
+			ul.dropdown-menu
+				li: a(href="#") Manage account
+				li: a(href="#") Logout

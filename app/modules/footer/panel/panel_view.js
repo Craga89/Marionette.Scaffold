@@ -3,7 +3,7 @@ var Footer = Backbone.Marionette.Layout.extend({
 
 	id: 'footer',
 	tagName: 'footer',
-	className: 'navbar navbar-static-top'
+	className: 'navbar'
 });
 
 module.exports = Footer;
