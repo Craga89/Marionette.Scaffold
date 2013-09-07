@@ -3,8 +3,8 @@ var NavigationView = require('./navigation_view');
 var ListLayout = Backbone.Marionette.Layout.extend({
 	template: require('./templates/layout'),
 	id: 'header',
-	tagName: 'header',
-	className: 'navbar navbar-fixed-top',
+	tagName: 'nav',
+	className: 'navbar navbar-default navbar-fixed-top',
 
 	regions: {
 		navRegion: '#nav',
