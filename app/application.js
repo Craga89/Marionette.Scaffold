@@ -6,6 +6,9 @@ App = new Backbone.Marionette.Application({
 	DEBUG: !!settings.DEBUG,
 	settings: settings,
 
+	// Application name (used for <title>)
+	title: 'Marionette.Scaffold Application',
+
 	// Root page
 	rootRoute: '',
 
